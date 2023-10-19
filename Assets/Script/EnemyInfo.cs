@@ -19,5 +19,4 @@ public class EnemyInfo
     public string enemyWeaponList; //法宝列表
 
 
-
 }

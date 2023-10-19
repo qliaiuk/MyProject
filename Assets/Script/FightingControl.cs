@@ -10,7 +10,6 @@ public class FightingControl : MonoBehaviour
 
     public RoleInfo roleInfo; //角色数据
 
-
     // 战斗实现逻辑
     // 由于战斗为全自动进行，因此可以直接计算出战斗结果，实现“跳过战斗”功能
     // 在快速计算完战斗结果时，返回一个存储战斗过程的变量
