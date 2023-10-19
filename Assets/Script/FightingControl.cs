@@ -8,7 +8,10 @@ public class FightingControl : MonoBehaviour
     public GameObject roleObject;  // 游戏角色
     public GameObject enemyObject;  // 怪物角色
 
-    public RoleInfo roleInfo; //角色数据
+    public RoleInfo roleInfoData; //角色数据
+    public EnemyInfo enemyInfoData;  //怪物数据
+    
+
 
     // 战斗实现逻辑
     // 由于战斗为全自动进行，因此可以直接计算出战斗结果，实现“跳过战斗”功能
