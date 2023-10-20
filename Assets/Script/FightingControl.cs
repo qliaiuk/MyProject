@@ -90,38 +90,6 @@ public class FightingControl : MonoBehaviour
         
     }
 
-
-     // 普通攻击伤害计算,返回伤害值及是否暴击
-    public Tuple<int,bool,bool> AttackDamageCalculate(RoleInfo atkRole,RoleInfo dmgRole)
-    {
-        // 普通攻击伤害计算,返回伤害值及是否暴击
-        float finaldamage;  // 最终造成的伤害
-        bool isCritical=false;  // 是否造成暴击
-        bool isDodge=false;  //是否闪避
-        float x1=UnityEngine.Random.Range(0.9f,1.1f);  // 伤害波动，每次攻击造成的伤害范围为90%~110%
-        finaldamage=atkRole.roleDirectAttack*x1;
-
-        if(RandomDetermine(0.2f))  // 是否暴击判定,暴击概率0.2，暴击倍率1.5
-        {
-            finaldamage=finaldamage*1.5f;
-            isCritical=true;
-        }
-
-        // 躲避判定，躲避概率为0.1
-        if(RandomDetermine(0.1f))
-        {
-            // 闪避成功
-            finaldamage=0f;
-            isDodge=true;
-        }
-
-        // 伤害减免，基于受伤者的护甲值进行减免
-        float rate=1f-dmgRole.roleDef/(dmgRole.roleDef+1000);
-        finaldamage=finaldamage*rate;
-
-        return Tuple.Create((int)finaldamage,isCritical,isDodge);
-    }
-
     // 发动一次攻击
     public Tuple<RoleInfo,RoleInfo> AttackAction(RoleInfo pA,RoleInfo pB)
     {
@@ -132,7 +100,7 @@ public class FightingControl : MonoBehaviour
         {
             // 发动普通攻击
             Tuple<int,bool,bool> atkResult;
-            atkResult=AttackDamageCalculate(pA,pB);
+            atkResult=NormalAttackDamageCalculate(pA,pB);
             string txt=""; // 输出文字
             if(atkResult.Item2)    // 是否造成会心一击
             {
@@ -187,6 +155,36 @@ public class FightingControl : MonoBehaviour
     }
 
 
+     // 普通攻击伤害计算,返回伤害值及是否暴击、是否闪避
+    public Tuple<int,bool,bool> NormalAttackDamageCalculate(RoleInfo atkRole,RoleInfo dmgRole)
+    {
+        // 普通攻击伤害计算,返回伤害值及是否暴击
+        float finaldamage;  // 最终造成的伤害
+        bool isCritical=false;  // 是否造成暴击
+        bool isDodge=false;  //是否闪避
+        float x1=UnityEngine.Random.Range(0.9f,1.1f);  // 伤害波动，每次攻击造成的伤害范围为90%~110%
+        finaldamage=atkRole.roleDirectAttack*x1;
+
+        if(RandomDetermine(0.2f))  // 是否暴击判定,暴击概率0.2，暴击倍率1.5
+        {
+            finaldamage=finaldamage*1.5f;
+            isCritical=true;
+        }
+
+        // 躲避判定，躲避概率为0.1
+        if(RandomDetermine(0.1f))
+        {
+            // 闪避成功
+            finaldamage=0f;
+            isDodge=true;
+        }
+
+        // 伤害减免，基于受伤者的护甲值进行减免
+        float rate=1f-dmgRole.roleDef/(dmgRole.roleDef+1000);
+        finaldamage=finaldamage*rate;
+
+        return Tuple.Create((int)finaldamage,isCritical,isDodge);
+    }
 
 
 
