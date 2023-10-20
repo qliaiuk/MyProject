@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyInfo 
 {
+
+    // 该类已弃用
     public int enemyHp;
     public int enemyMaXHp;
     public int enemyMp;

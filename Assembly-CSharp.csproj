@@ -65,6 +65,7 @@
     <Compile Include="Assets\download\Free 2D Cartoon Parallax Background\Demo\Script\ParallaxBackground_0.cs" />
     <Compile Include="Assets\Script\GameMainScene.cs" />
     <Compile Include="Assets\Script\EnemyInfo.cs" />
+    <Compile Include="Assets\Script\FightingControl.cs" />
     <Compile Include="Assets\Script\RoleInfo.cs" />
     <Compile Include="Assets\download\Free 2D Cartoon Parallax Background\Demo\Script\BackgroundControl_0.cs" />
     <Compile Include="Assets\Script\GameDataManager.cs" />
