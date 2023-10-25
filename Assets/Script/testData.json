@@ -1,0 +1,23 @@
+{
+    "list":[
+    {
+        "name":"黄飞鸿",
+        "HP":1000,
+        "MP":1000,
+        "MagicAttack":100,
+        "DirectAttac":100,
+        "FlightSpeed":100,
+        "BodyMethod":100,
+        "Def":100
+    },
+    {
+        "name":"嗜血虫",
+        "HP":1000,
+        "MP":1000,
+        "MagicAttack":100,
+        "DirectAttac":100,
+        "FlightSpeed":100,
+        "BodyMethod":100,
+        "Def":100
+    }]   
+}
