@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\RoleInfo.cs" />
     <Compile Include="Assets\download\Free 2D Cartoon Parallax Background\Demo\Script\BackgroundControl_0.cs" />
     <Compile Include="Assets\Script\GameDataManager.cs" />
+    <Compile Include="Assets\Script\TwoRect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\download\Pixel Monster Pack\notes.txt" />
